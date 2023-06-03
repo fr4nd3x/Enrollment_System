@@ -8,6 +8,7 @@ flask = "*"
 flask-login = "*"
 flask-mysqldb = "*"
 flask-wtf = "*"
+flask-cors = "*"
 
 [dev-packages]
 

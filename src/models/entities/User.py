@@ -19,9 +19,3 @@ class User(UserMixin):
 
 #print(generate_password_hash("123"))
 
-class Roles():
-
-    def rol(self, id_rol ) -> None:
-     
-        self.id_rol = id_rol
-      
