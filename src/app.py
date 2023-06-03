@@ -4,7 +4,7 @@ from flask_wtf.csrf import CSRFProtect
 from flask_login import LoginManager, login_user, logout_user, login_required
 from config import config
 from models.ModelUser import ModelUser
-from models.entities.User import User
+from models.entities.User import User,Roles
 
 
 
@@ -25,23 +25,58 @@ def index():
     return redirect(url_for('login'))
 
 
+
+
+
+
+
+
+
+
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         user = User(0, request.form['username'], request.form['password'])
         logged_user = ModelUser.login(db, user)
+        roles = Roles(0)
+        rol_user=ModelUser.Roles(db,roles)
+
         if logged_user != None:
             if logged_user.password:
                 login_user(logged_user)
-                return redirect(url_for('home'))
+                
+                if rol_user.id_rol == 1:
+                    return redirect(url_for('admin'))
+                else:
+                    return redirect(url_for('home'))
+                
             else:
                 flash("Contraseña incorrecta")
                 return render_template('auth/login.html')
         else:
             flash("Usuario no registrado")
             return render_template('auth/login.html')
+    
     else:
         return render_template('auth/login.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @app.route('/logout')
 def logout():
@@ -52,6 +87,13 @@ def logout():
 @app.route('/home')
 def home():
     return render_template('home.html')
+
+
+
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+
 
 
 @app.route('/protected')

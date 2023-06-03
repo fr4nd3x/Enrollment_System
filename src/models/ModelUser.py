@@ -1,4 +1,4 @@
-from .entities.User import User
+from .entities.User import User,Roles
 
 
 class ModelUser():
@@ -28,6 +28,20 @@ class ModelUser():
             row = cursor.fetchone()
             if row != None:
                 return User(row[0], row[1], None, row[2])
+            else:
+                return None
+        except Exception as ex:
+            raise Exception(ex)
+        
+    @classmethod
+    def Roles(self, db, id_rol):
+        try:
+            cursor = db.connection.cursor()
+            sql = ("SELECT id_rol FROM roles WHERE id_rol = {}".format(id_rol))
+            cursor.execute(sql)
+            row = cursor.fetchone()
+            if row != None:
+                return Roles(row[0])
             else:
                 return None
         except Exception as ex:
