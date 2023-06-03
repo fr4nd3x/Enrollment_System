@@ -33,14 +33,15 @@ def index():
 def login():
     if request.method == 'POST':
         user = User(0, request.form['username'], request.form['password'])
-        logged_user = ModelUser.login(db, user)
         
-    
-
+        logged_user = ModelUser.login(db, user)
         if logged_user != None:
-            if logged_user.password:
+            if logged_user.password :
                 login_user(logged_user)
-                return redirect(url_for('home'))   
+                if logged_user.username == "admin" :
+                     return redirect(url_for('home'))
+                else:
+                     return redirect(url_for('lobby'))
             else:
                 flash("Contraseña incorrecta")
                 return render_template('auth/login.html')
@@ -50,6 +51,8 @@ def login():
     
     else:
         return render_template('auth/login.html')
+    
+
 
 
 @app.route('/logout')
@@ -58,15 +61,39 @@ def logout():
     return redirect(url_for('login'))
 
 
+@app.route('/mantenimiento')
+def mantenimiento():
+    return render_template('mantenimiento.html')
+
+@app.route("/lobby")
+def lobby():
+    return render_template('lobby.html')
+
+
 @app.route('/home')
 def home():
     return render_template('home.html')
 
+
+@app.route('/formulario')
+def formulario():
+    return render_template('formulario.html')
+
+
+
+#Crud Alumno
+@app.route('/alumno', methods=['GET'])
+
+def listar_alumno():
+    return None
+
+
+# CRUD curso del alumno
 @app.route('/cursos', methods=['GET'])
 def listar_cursos():
     try:
         cursor = db.connection.cursor()
-        sql = "SELECT codigo, nombre, creditos FROM curso ORDER BY nombre ASC"
+        sql = "SELECT codigo, nombre, creditos FROM curso ORDER BY nombre  ASC"
         cursor.execute(sql)
         datos = cursor.fetchall()
         cursos = []
@@ -162,7 +189,7 @@ def eliminar_curso(codigo):
     except Exception as ex:
         return jsonify({'mensaje': "Error", 'exito': False})
 
-
+#Fin del CRUD curso de alumno 
 
 
 

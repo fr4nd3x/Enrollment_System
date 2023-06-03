@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+	<head>
+		<meta name="google-site-verification" content="J8rVEGnWvHti50EtXxZqs-DmHqnNTYalL9XMJ8CtNSY">
+		<meta charset="utf-8"/>
+		<meta name="description" content="La Plataforma de Servicios Educativos PSEDUCA IT- del Centro de Bachillerato José Vasconcelos SC. es una herramienta de apoyo a la educación y a la comunicación basada en Internet."/>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<title>PSEDUCA IT - Preparatoria José Vasconcelos</title>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+		<link rel="stylesheet" href="static/css/lobby.css"/>
+	</head>
+	<body>
+		<header>
+			<figure>
+				<img src="static/img/logo.png" alt="PRINCIPAL">
+			</figure>
+			<hgroup>
+				<h1>SENATI </h1>
+				<h2>Plataforma de Servicios Educativos</h2>
+			</hgroup>
+		</header>
+		<nav>
+			<ul>
+				<li>
+					<a href="{{ url_for('formulario') }}">
+						<img src="static/img/inscripciones.png">
+						INSCRIPCIONES
+					</a>
+				</li>
+				<li>
+					<a href="{{ url_for('mantenimiento') }}">
+						<img src="static/img/cursos.png">
+						CURSOS
+					</a>
+				</li>
+				<li>
+					<a href="{{ url_for('mantenimiento') }}">
+						<img src="static/img/practicas.png">
+						PRÁCTICAS
+					</a>
+				</li>
+				<li>
+					<a href="{{ url_for('mantenimiento') }}">
+						<img src="static/img/contacto.png">
+						CONTACTO
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<footer>
+			&copy; Frandex 2023<br/>
+		</footer>
+	</body>
+</html>

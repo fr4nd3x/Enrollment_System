@@ -1,8 +1,29 @@
 {% extends './base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}REGISTRO {% endblock %}
 
 {% block body %}
-<h1>Bienvenido, {{ current_user.fullname }}</h1>
-<a class="btn btn-secondary" href="{{ url_for('logout') }}">Logout</a>
+<h1>Bienvenido {{ current_user.fullname }}</h1>
+
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<link rel="stylesheet" href="static/css/home.css">
+<body>
+  <section class="form-register">
+    <h4>Formulario de registro </h4>
+    <input class="controls" type="text" name="user" id="user" placeholder="Ingrese sus Nombres Completos">
+    <input class="controls" type="text" name="text" id="text" placeholder="Ingrese sus nombre de Usuario">
+    <input class="controls" type="text" name="codigo" id="codigo" placeholder="Ingrese el codigo del estudiante">
+    <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
+
+    <select class="form-select">
+        <option selected>Seleccione rol del ususario</option>
+        <option value="2">ALUMNO</option>
+        <option value="3">DOCENTE</option>
+    </select>
+
+
+    <input class="botons" type="submit" value="Registrar">
+    <a class="btn btn-secondary" href="{{ url_for('logout') }}">Logout</a>
+  </section>
+</body>
 {% endblock %}

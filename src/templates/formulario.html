@@ -1,0 +1,36 @@
+{% extends './base.html' %}
+
+{% block title %}REGISTRO CURSO{% endblock %}
+
+{% for message in messages %}
+
+
+{% endfor %}
+
+
+
+{% block body %}
+<h1>Bienvenido  {{ current_user.fullname }}</h1>
+
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+<link rel="stylesheet" href="static/css/home.css">
+<body>
+  <section class="form-register">
+    <h4>Formulario Registro de curso</h4>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input class="controls" type="text" name="text" id="text" placeholder="Ingrese sus Nombres Completos">
+
+    <input class="controls" type="text" name="text" id="text" placeholder="Nombre del curso">
+    <input class="controls" type="text" name="text" id="text" placeholder="Nombre del Docente">
+    <input class="controls" type="number" name="number" id="number" placeholder="Creditos">
+
+    <input class="botons" type="submit" value="Inscribirse">
+    <a class="btn btn-secondary" href="{{ url_for('lobby') }}">Logout</a>
+  </section>
+
+</body>
+
+
+
+{% endblock %}
