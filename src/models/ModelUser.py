@@ -1,5 +1,6 @@
 from .entities.User import User
 
+# se pone la clase molel user para el login del usuario
 
 class ModelUser():
 
