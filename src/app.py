@@ -21,7 +21,7 @@ login_manager_app = LoginManager(app)
 @login_manager_app.user_loader
 def load_user(id):
     return ModelUser.get_by_id(db, id)
-
+#La ruta slash automáticamente será redireccionada a la página de login con el url_for
 
 @app.route('/')
 def index():
