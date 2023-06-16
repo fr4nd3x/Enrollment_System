@@ -27,7 +27,7 @@ def load_user(id):
 def index():
     return redirect(url_for('login'))
 
-
+# A partir de aqui utilizamos los métodos get, post, put and delete 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
