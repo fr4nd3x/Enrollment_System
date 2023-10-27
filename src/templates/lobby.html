@@ -11,44 +11,69 @@
 	</head>
 	<body>
 		<header>
-			<figure>
-				<img src="static/img/logo.png" alt="PRINCIPAL">
-			</figure>
-			<hgroup>
-				<h1>SENATI </h1>
-				<h2>Plataforma de Servicios Educativos</h2>
-			</hgroup>
+			<nav>
+				<div class="Logo">
+					<img src="static/img/Logo01.png" alt="Logo de la compañia">
+
+				</div>
+
+				<ul>
+					<li><a href="{{ url_for('mantenimiento') }}">NOSOTROS</a></li>
+					<li><a href="{{ url_for('mantenimiento') }}">PROYECTOS</a></li>
+					<li><a href="{{ url_for('mantenimiento') }}">BLOG</a></li>
+					<li><a href="{{ url_for('mantenimiento') }}">CONTACTOS</a></li>
+					<li><a href="{{ url_for('mantenimiento') }}">INTRANET</a></li>
+
+				</ul>
+			</nav>
+
+			
+
 		</header>
-		<nav>
-			<ul>
-				<li>
-					<a href="{{ url_for('formulario') }}">
-						<img src="static/img/inscripciones.png">
-						INSCRIPCIONES
-					</a>
-				</li>
-				<li>
-					<a href="{{ url_for('mantenimiento') }}">
-						<img src="static/img/cursos.png">
-						CURSOS
-					</a>
-				</li>
-				<li>
-					<a href="{{ url_for('mantenimiento') }}">
-						<img src="static/img/practicas.png">
-						PRÁCTICAS
-					</a>
-				</li>
-				<li>
-					<a href="{{ url_for('mantenimiento') }}">
-						<img src="static/img/contacto.png">
-						CONTACTO
-					</a>
-				</li>
-			</ul>
-		</nav>
-		<footer>
-			&copy; Frandex 2023<br/>
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		<footer class="pie-pagina">
+			<div class="grupo-1">
+				<div class="box">
+					<figure>
+						<a href="#">
+							<img src="img/logotipo-sleedw.svg" alt="Logo de SLee Dw">
+						</a>
+					</figure>
+				</div>
+				<div class="box">
+					<h2>SOBRE NOSOTROS</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+				</div>
+				<div class="box">
+					<h2>SIGUENOS</h2>
+					<div class="red-social">
+						<a href="#" class="fa fa-facebook"></a>
+						<a href="#" class="fa fa-instagram"></a>
+						<a href="#" class="fa fa-twitter"></a>
+						<a href="#" class="fa fa-youtube"></a>
+					</div>
+				</div>
+			</div>
+			<div class="grupo-2">
+				<small>&copy; 2021 <b>SLee Dw</b> - Todos los Derechos Reservados.</small>
+			</div>
 		</footer>
 	</body>
 </html>

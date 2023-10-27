@@ -1,4 +1,151 @@
-/*Hoja de estilos para el archivo Index.html*/
+/*Hoja de estilos para el archivo lobby.html*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+nav{
+	display: flex;
+	height: 70px;
+	background-color:black ;
+
+
+	justify-content: space-between;
+	align-items: center;
+
+	padding-top:5px ;
+	padding-right: 5%;
+	font-weight: bold;
+}
+.Logo{
+	display: flex;
+
+}
+.Logo img{
+	height: 50px;
+	padding-right: 5%;
+}
+
+h1{
+	color: black;
+	font-size: 45px;
+
+}
+
+ul li{
+	display: inline-block;
+	padding: 0px 20px;
+}
+a{
+	color: white;
+	text-decoration: wavy;
+}
+
+a:hover{
+	color: aqua;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*:::::Pie de Pagina*/
+.pie-pagina{
+    width: 100%;
+    background-color: #0a141d;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: aqua;
+}
+.pie-pagina .grupo-2{
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 @font-face{
 	font-family: "HamburgerHeaven";
@@ -23,7 +170,7 @@ body, html{
 	background-image: -moz-linear-gradient(top, #293caa, #293caa 356px, #95bdf1 356px, #95bdf1);
 	background-image: -ms-linear-gradient(top, #293caa, #293caa 356px, #95bdf1 356px, #95bdf1);
 	background-image: -o-linear-gradient(top, #293caa, #293caa 356px, #95bdf1 356px, #95bdf1);
-	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(100%,#7db9e8));*/
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(100%,#7db9e8));
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#293caa), color-stop(40%,#293caa), color-stop(40%,#95bdf1), color-stop(100%,#95bdf1));
 	background-image: -webkit-linear-gradient(top, #293caa, #293caa 356px, #95bdf1 356px, #95bdf1);
 	background-image: linear-gradient(top, #293caa, #293caa 356px, 95bdf1#F4E1A7 356px, #95bdf1);
@@ -146,12 +293,6 @@ nav ul li a:hover img{
 	opacity: 1;
 	top: 25px;
 }
-footer{
-	bottom: .5em;
-	color: #23331C;
-	margin: auto;
-	position: absolute;
-	text-align: center;
-	width: 100%;
-}
 
+
+*/
